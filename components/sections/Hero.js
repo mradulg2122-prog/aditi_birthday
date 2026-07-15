@@ -18,21 +18,21 @@ export default function Hero({ onBegin }) {
 
       {/* Floating photo placeholders */}
       {[
-        { top: '15%', left: '8%', rotate: -8, delay: 0.2 },
-        { top: '25%', right: '10%', rotate: 6, delay: 0.4 },
-        { bottom: '20%', left: '12%', rotate: 4, delay: 0.6 },
-        { bottom: '25%', right: '8%', rotate: -5, delay: 0.8 },
+        { top: '12%', left: '6%', rotate: -8, delay: 0.2, src: '/photos/aditi-1.jpg' },
+        { top: '20%', right: '8%', rotate: 6, delay: 0.4, src: '/photos/aditi-2.jpg' },
+        { bottom: '18%', left: '10%', rotate: 4, delay: 0.6, src: '/photos/aditi-3.jpg' },
+        { bottom: '22%', right: '6%', rotate: -5, delay: 0.8, src: '/photos/aditi-2.jpg' },
       ].map((p, i) => (
         <motion.div
           key={i}
           className="hidden md:block absolute glass rounded-lg shadow-soft p-2"
-          style={{ ...p, transform: `rotate(${p.rotate}deg)` }}
+          style={{ top: p.top, left: p.left, right: p.right, bottom: p.bottom, transform: `rotate(${p.rotate}deg)` }}
           initial={{ opacity: 0, scale: 0.8, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: [0, -8, 0] }}
           transition={{ delay: p.delay, duration: 1.2, y: { repeat: Infinity, duration: 4 + i, ease: 'easeInOut' } }}
         >
-          <div className="w-24 h-32 rounded-md bg-gradient-to-br from-rose-100 to-purple-100 flex items-center justify-center">
-            <span className="text-xs text-rose-400/70 font-serif-elegant italic">memory</span>
+          <div className="w-24 h-32 rounded-md overflow-hidden">
+            <img src={p.src} alt="Aditi" className="w-full h-full object-cover" />
           </div>
         </motion.div>
       ))}

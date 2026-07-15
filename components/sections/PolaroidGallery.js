@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion'
 
 const polaroids = [
-  { rotate: -8, delay: 0, caption: 'moment one' },
-  { rotate: 5, delay: 0.1, caption: 'moment two' },
-  { rotate: -3, delay: 0.2, caption: 'moment three' },
-  { rotate: 7, delay: 0.3, caption: 'moment four' },
-  { rotate: -6, delay: 0.4, caption: 'moment five' },
-  { rotate: 4, delay: 0.5, caption: 'moment six' },
+  { rotate: -8, delay: 0, caption: 'her smile', src: '/photos/aditi-1.jpg' },
+  { rotate: 5, delay: 0.1, caption: 'a quiet moment', src: '/photos/aditi-2.jpg' },
+  { rotate: -3, delay: 0.2, caption: 'golden hour', src: '/photos/aditi-3.jpg' },
+  { rotate: 7, delay: 0.3, caption: 'so effortless', src: '/photos/aditi-1.jpg' },
+  { rotate: -6, delay: 0.4, caption: 'pure joy', src: '/photos/aditi-2.jpg' },
+  { rotate: 4, delay: 0.5, caption: 'unforgettable', src: '/photos/aditi-3.jpg' },
 ]
 
 export default function PolaroidGallery() {
@@ -34,10 +34,8 @@ export default function PolaroidGallery() {
             animate={{ y: [0, -6, 0] }}
           >
             <div className="bg-white/90 backdrop-blur-sm p-3 pb-12 rounded-sm shadow-soft" style={{ boxShadow: '0 20px 50px -20px rgba(180,140,160,0.35)' }}>
-              <div className="aspect-square rounded-sm overflow-hidden" style={{ background: `linear-gradient(135deg, hsl(${340 + i * 15}, 55%, 90%), hsl(${290 + i * 10}, 45%, 88%))` }}>
-                <div className="w-full h-full flex items-center justify-center">
-                  <span className="font-script text-2xl text-rose-400/60">photo</span>
-                </div>
+              <div className="aspect-square rounded-sm overflow-hidden">
+                <img src={p.src} alt={p.caption} className="w-full h-full object-cover" loading="lazy" />
               </div>
               <p className="font-script text-center mt-3 text-rose-900/70">{p.caption}</p>
             </div>

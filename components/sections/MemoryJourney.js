@@ -3,12 +3,12 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
 const memories = [
-  { title: 'First Meeting', subtitle: 'where it all began', text: 'The very first moment our paths crossed — a small beginning that quietly turned into something meaningful.' },
-  { title: 'Second Meeting', subtitle: 'when things felt familiar', text: 'A second chapter, gentler and warmer, where conversations lingered longer than expected.' },
-  { title: 'Memory One', subtitle: 'a golden afternoon', text: 'Bright light, easy laughter, and a moment I still return to when I need a smile.' },
-  { title: 'Memory Two', subtitle: 'small joys', text: 'The little in-between things — quiet, ordinary, and somehow unforgettable.' },
-  { title: 'Memory Three', subtitle: 'looking back fondly', text: 'A page from our story that never fades. Warm colors, warmer feelings.' },
-  { title: 'Best Moments', subtitle: 'all the little sparks', text: 'A gentle collection of everything that made the journey brighter — all because of you.' },
+  { title: 'First Meeting', subtitle: 'where it all began', text: 'The very first moment our paths crossed — a small beginning that quietly turned into something meaningful.', photo: '/photos/aditi-1.jpg' },
+  { title: 'Second Meeting', subtitle: 'when things felt familiar', text: 'A second chapter, gentler and warmer, where conversations lingered longer than expected.', photo: '/photos/aditi-2.jpg' },
+  { title: 'Memory One', subtitle: 'a golden afternoon', text: 'Bright light, easy laughter, and a moment I still return to when I need a smile.', photo: '/photos/aditi-3.jpg' },
+  { title: 'Memory Two', subtitle: 'small joys', text: 'The little in-between things — quiet, ordinary, and somehow unforgettable.', photo: '/photos/aditi-1.jpg' },
+  { title: 'Memory Three', subtitle: 'looking back fondly', text: 'A page from our story that never fades. Warm colors, warmer feelings.', photo: '/photos/aditi-2.jpg' },
+  { title: 'Best Moments', subtitle: 'all the little sparks', text: 'A gentle collection of everything that made the journey brighter — all because of you.', photo: '/photos/aditi-3.jpg' },
 ]
 
 function MemoryCard({ memory, index }) {
@@ -33,14 +33,7 @@ function MemoryCard({ memory, index }) {
           <div className="relative group">
             <div className="absolute -inset-2 bg-gradient-to-br from-rose-200/40 to-purple-200/40 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700" />
             <div className="relative glass rounded-2xl overflow-hidden shadow-soft aspect-[4/5]">
-              <div className="w-full h-full bg-gradient-to-br from-rose-100 via-peach-100 to-purple-100 flex items-center justify-center"
-                style={{ background: `linear-gradient(135deg, hsl(${340 + index * 8}, 60%, 92%), hsl(${280 + index * 10}, 50%, 90%))` }}
-              >
-                <div className="text-center px-6">
-                  <p className="font-script text-3xl text-rose-400/70 mb-2">photo</p>
-                  <p className="text-xs uppercase tracking-widest text-rose-900/40">/public/photos/{`memory-${index + 1}.jpg`}</p>
-                </div>
-              </div>
+              <img src={memory.photo} alt={memory.title} className="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
         </motion.div>

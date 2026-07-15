@@ -43,8 +43,8 @@ export default function MemoryBook() {
             onClick={() => setOpen(!open)}
           >
             <div className="absolute inset-0 flex flex-col items-center justify-center text-rose-950/70 p-8">
-              <div className="w-20 h-20 rounded-full border border-rose-300/60 flex items-center justify-center mb-6">
-                <span className="font-script text-4xl">A</span>
+              <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-white/60 mb-6 shadow-soft">
+                <img src="/photos/aditi-3.jpg" alt="Aditi" className="w-full h-full object-cover" />
               </div>
               <h3 className="font-serif-elegant text-3xl md:text-4xl italic mb-2 text-center">Aditi’s Book</h3>
               <p className="text-xs uppercase tracking-[0.3em] opacity-60">of beautiful moments</p>
