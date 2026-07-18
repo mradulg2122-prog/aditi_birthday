@@ -32,8 +32,29 @@ function MemoryCard({ memory, index }) {
         >
           <div className="relative group">
             <div className="absolute -inset-2 bg-gradient-to-br from-rose-200/40 to-purple-200/40 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-700" />
-            <div className="relative glass rounded-2xl overflow-hidden shadow-soft aspect-[4/5]">
-              <img src={memory.photo} alt={memory.title} className="w-full h-full object-cover" loading="lazy" />
+            {/* Container: preserves photo's natural aspect ratio. Blurred backdrop of same image fills any empty space. */}
+            <div className="relative rounded-2xl overflow-hidden shadow-soft max-h-[75vh] mx-auto" style={{ minHeight: 300 }}>
+              {/* Soft blurred backdrop */}
+              <div
+                aria-hidden
+                className="absolute inset-0 scale-110"
+                style={{
+                  backgroundImage: `url(${memory.photo})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  filter: 'blur(30px) saturate(120%)',
+                  opacity: 0.55,
+                }}
+              />
+              <div className="absolute inset-0 bg-white/30 backdrop-blur-sm" />
+              {/* Actual photo — full visible, aspect preserved */}
+              <img
+                src={memory.photo}
+                alt={memory.title}
+                className="relative z-10 block max-h-[75vh] w-auto h-auto mx-auto"
+                style={{ maxWidth: '100%' }}
+                loading="lazy"
+              />
             </div>
           </div>
         </motion.div>

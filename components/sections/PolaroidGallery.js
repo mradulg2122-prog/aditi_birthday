@@ -34,8 +34,20 @@ export default function PolaroidGallery() {
             animate={{ y: [0, -6, 0] }}
           >
             <div className="bg-white/90 backdrop-blur-sm p-3 pb-12 rounded-sm shadow-soft" style={{ boxShadow: '0 20px 50px -20px rgba(180,140,160,0.35)' }}>
-              <div className="aspect-square rounded-sm overflow-hidden">
-                <img src={p.src} alt={p.caption} className="w-full h-full object-cover" loading="lazy" />
+              <div className="relative rounded-sm overflow-hidden bg-rose-50/60" style={{ minHeight: 180 }}>
+                {/* Blurred backdrop */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 scale-110"
+                  style={{
+                    backgroundImage: `url(${p.src})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    filter: 'blur(20px) saturate(120%)',
+                    opacity: 0.5,
+                  }}
+                />
+                <img src={p.src} alt={p.caption} className="relative z-10 block w-auto h-auto mx-auto max-h-[280px]" style={{ maxWidth: '100%' }} loading="lazy" />
               </div>
               <p className="font-script text-center mt-3 text-rose-900/70">{p.caption}</p>
             </div>
