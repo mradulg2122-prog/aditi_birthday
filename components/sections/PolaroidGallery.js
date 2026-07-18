@@ -2,12 +2,12 @@
 import { motion } from 'framer-motion'
 
 const polaroids = [
-  { rotate: -8, delay: 0, caption: 'her smile', src: '/photos/aditi-1.jpg' },
+  { rotate: -8, delay: 0, caption: 'simply beautiful', src: '/photos/aditi-1.jpg' },
   { rotate: 5, delay: 0.1, caption: 'a quiet moment', src: '/photos/aditi-2.jpg' },
-  { rotate: -3, delay: 0.2, caption: 'golden hour', src: '/photos/aditi-3.jpg' },
-  { rotate: 7, delay: 0.3, caption: 'so effortless', src: '/photos/polaroid4.jpg' },
-  { rotate: -6, delay: 0.4, caption: 'pure joy', src: '/photos/aditi-2.jpg' },
-  { rotate: 4, delay: 0.5, caption: 'unforgettable', src: '/photos/aditi-3.jpg' },
+  { rotate: -3, delay: 0.2, caption: 'her smile', src: '/photos/aditi-3.jpg' },
+  { rotate: 7, delay: 0.3, caption: 'unforgettable', src: '/photos/polaroid4.jpg' },
+  { rotate: -6, delay: 0.4, caption: 'pure joy', src: '/photos/polaroid5.jpg' },
+  { rotate: 4, delay: 0.5, caption: 'radiant', src: '/photos/polaroid6.jpg' },
 ]
 
 export default function PolaroidGallery() {
