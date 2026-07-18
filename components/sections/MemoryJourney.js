@@ -3,9 +3,9 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 
 const memories = [
-  { title: 'First Meeting', subtitle: 'where it all began', text: 'The very first moment our paths crossed — a small beginning that quietly turned into something meaningful.', photo: '/photos/aditi-1.jpg' },
+  { title: 'First Meeting', subtitle: 'where it all began', text: 'The very first moment our paths crossed — a small beginning that quietly turned into something meaningful.', photo: '/photos/memory1.jpg' },
   { title: 'Second Meeting', subtitle: 'when things felt familiar', text: 'A second chapter, gentler and warmer, where conversations lingered longer than expected.', photo: '/photos/aditi-2.jpg' },
-  { title: 'Memory One', subtitle: 'a golden afternoon', text: 'Bright light, easy laughter, and a moment I still return to when I need a smile.', photo: '/photos/memory1.jpg' },
+  { title: 'Memory One', subtitle: 'a golden afternoon', text: 'Bright light, easy laughter, and a moment I still return to when I need a smile.', photo: '/photos/aditi-1.jpg' },
   { title: 'Memory Two', subtitle: 'small joys', text: 'The little in-between things — quiet, ordinary, and somehow unforgettable.', photo: '/photos/aditi-1.jpg' },
   { title: 'Memory Three', subtitle: 'looking back fondly', text: 'A page from our story that never fades. Warm colors, warmer feelings.', photo: '/photos/memory3.jpg' },
   { title: 'Best Moments', subtitle: 'all the little sparks', text: 'A gentle collection of everything that made the journey brighter — all because of you.', photo: '/photos/aditi-3.jpg' },
