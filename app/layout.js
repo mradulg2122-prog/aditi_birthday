@@ -1,5 +1,5 @@
 import './globals.css'
-
+import { Analytics } from "@vercel/analytics/next"
 export const metadata = {
   title: 'Happy Birthday Aditi',
   description: 'A cinematic birthday journey',
